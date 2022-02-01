@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  web:
+      build: .
+      ports:
+      - "80:80"
+      - "443:443"
+      volumes:
+      - ./www:/var/www/html
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USERNAME: "davi"
+      POSTGRES_PASSWORD: "davi"
+    ports:
+      - "5432:5432"
